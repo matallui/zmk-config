@@ -11,7 +11,7 @@
 
 &mt {
     flavor = "tap-preferred";
-    tapping_term_ms = <250>;
+    tapping_term_ms = <200>;
 };
 
 / { 
@@ -29,10 +29,10 @@
 
         left_layer {
         bindings = <
-        &kp ESC     &kp AT      &kp POUND   &kp DLLR    &kp PRCNT           &kp CARET   &kp AMPS    &kp STAR    &kp PIPE    &kp BSPC
-        &kp TAB     &kp PLUS    &kp EQL     &kp APOS    &kp UNDER           &kp MINUS   &kp LBRC    &kp RBRC    &kp BSLH    &kp RET
-        &kp TILDE   &kp GRAVE 	&kp EXCL    &kp DQT     &none               &kp LBKT    &kp LPAR    &kp RPAR    &kp RBKT    &to 2
-                                            &to 0       &kp LGUI            &kp RALT    &to 3
+        &kp ESC     &kp AT      &kp POUND   &kp DLLR    &kp PRCNT           &kp CARET             &kp AMPS    &kp STAR    &kp PLUS    &kp BSPC
+        &kp TAB     &kp EXCL    &kp PIPE    &kp APOS    &kp MINUS           &kp EQL               &kp LBRC    &kp RBRC    &kp QMARK   &kp RET
+        &kp TILDE   &kp GRAVE 	&kp BSLH    &kp DQT     &kp UNDER           &mt LT LBKT           &kp LPAR    &kp RPAR    &mt GT RBKT &to 2
+                                            &to 0       &kp LGUI            &mt LC(LS(LALT)) SPC  &to 3
         >;
         };
         
