@@ -29,9 +29,9 @@
 
         left_layer {
         bindings = <
-        &kp ESC     &kp AT      &kp POUND   &kp DLLR    &kp PRCNT           &kp CARET             &kp AMPS    &kp STAR    &kp EQL     &kp BSPC
-        &kp TAB     &kp EXCL    &kp PIPE    &kp APOS    &kp MINUS           &kp PLUS              &kp LBRC    &kp RBRC    &kp QMARK   &kp RET
-        &kp TILDE   &kp GRAVE 	&kp BSLH    &kp DQT     &kp UNDER           &mt LT LBKT           &kp LPAR    &kp RPAR    &mt GT RBKT &to 2
+        &kp ESC         &kp AT      &kp POUND   &kp DLLR    &kp PRCNT           &kp CARET             &kp AMPS    &kp STAR    &kp EQL         &kp BSPC
+        &kp TAB         &kp EXCL    &kp PIPE    &kp APOS    &kp MINUS           &kp PLUS              &kp LBRC    &kp RBRC    &mt COLON SEMI  &kp RET
+        &mt TILDE GRAVE &kp QMARK 	&kp BSLH    &kp DQT     &kp UNDER           &mt LT LBKT           &kp LPAR    &kp RPAR    &mt GT RBKT     &to 2
                                             &to 0       &kp LGUI            &mt LC(LS(LALT)) SPC  &to 3
         >;
         };
