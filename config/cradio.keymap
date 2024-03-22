@@ -11,7 +11,7 @@
 
 &mt {
     flavor = "tap-preferred";
-    tapping_term_ms = <200>;
+    tapping-term-ms = <200>;
 };
 / {
     behaviors {
@@ -27,12 +27,12 @@
             bindings = <&kp DOT>, <&kp EXCL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        ralt_dot_bang:ralt_dot_bang {
+        mt_dot_bang: mt_dot_bang {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
             flavor = "tap-preferred";
-            tapping_term_ms = <200>;
-            bindings = <&kp RALT>, <&dot_bang>;
+            tapping-term-ms = <200>;
+            #binding-cells = <2>;
+            bindings = <&kp>, <&dot_bang>;
         };
     };
 };
@@ -42,9 +42,9 @@
                 
         default_layer {
         bindings = <
-        &kp Q       &kp W       &kp E       &kp R       &kp T               &kp Y                 &kp U       &kp I       &kp O           &kp P
-        &kp A       &kp S       &kp D       &kp F       &kp G               &kp H                 &kp J       &kp K       &kp L           &kp RET
-        &mt LGUI Z  &mt LALT X  &kp C       &kp V       &kp B               &kp N                 &kp M       &comma_apos &ralt_dot_bang  &mt RGUI SLASH
+        &kp Q       &kp W       &kp E       &kp R       &kp T               &kp Y                 &kp U       &kp I       &kp O               &kp P
+        &kp A       &kp S       &kp D       &kp F       &kp G               &kp H                 &kp J       &kp K       &kp L               &kp RET
+        &mt LGUI Z  &mt LALT X  &kp C       &kp V       &kp B               &kp N                 &kp M       &comma_apos &mt_dot_bang RALT 0 &mt RGUI SLASH
                                             &kp LCTRL   &kp LSHIFT          &mt LC(LS(LALT)) SPC  &to 1 
         >;
         };
