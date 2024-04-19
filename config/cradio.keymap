@@ -34,6 +34,26 @@
             #binding-cells = <2>;
             bindings = <&kp>, <&dot_bang>;
         };
+        spc_search: spc_search {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SPC>, <&kp LG(SPC)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        mt_spc_search: mt_spc_search {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            #binding-cells = <2>;
+            bindings = <&kp>, <&spc_search>;
+        };
+        space: space {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            #binding-cells = <0>;
+            bindings = <&mt_spc_search LC(LS(LALT)) 0>;
+        };
     };
 };
 / { 
@@ -45,7 +65,7 @@
         &kp Q       &kp W       &kp E       &kp R       &kp T               &kp Y                 &kp U       &kp I       &kp O               &kp P
         &kp A       &kp S       &kp D       &kp F       &kp G               &kp H                 &kp J       &kp K       &kp L               &kp RET
         &mt LGUI Z  &mt LALT X  &kp C       &kp V       &kp B               &kp N                 &kp M       &comma_apos &mt_dot_bang RALT 0 &mt RGUI SLASH
-                                            &kp LCTRL   &kp LSHIFT          &mt LC(LS(LALT)) SPC  &to 1 
+                                            &kp LCTRL   &kp LSHIFT          &space  &to 1 
         >;
         };
 
@@ -54,7 +74,7 @@
         &kp ESC         &kp AT      &kp POUND   &kp DLLR    &kp PRCNT           &kp CARET             &kp AMPS    &kp LT      &kp GT      &kp BSPC
         &kp TAB         &kp EXCL    &kp PIPE    &kp APOS    &kp MINUS           &kp COLON             &kp LPAR    &kp RPAR    &kp SEMI    &kp RET
         &mt TILDE GRAVE &kp QMARK 	&kp BSLH    &kp DQT     &kp UNDER           &kp LBKT              &kp LBRC    &kp RBRC    &kp RBKT    &to 2
-                                                &to 0       &kp LGUI            &mt LC(LS(LALT)) SPC  &to 3
+                                                &to 0       &kp LGUI            &space  &to 3
         >;
         };
         
@@ -72,7 +92,7 @@
         &kp ESC     &kp C_PP    &kp C_PREV    &kp C_NEXT    &kp STAR          &kp EQUAL             &kp N7  &kp N8  &kp N9  &kp BSPC
         &kp TAB     &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp MINUS         &kp PLUS              &kp N4  &kp N5  &kp N6  &kp RET
         &none       &none       &kp C_BRI_DN  &kp C_BRI_UP  &kp DOT           &kp N0                &kp N1  &kp N2  &kp N3  &to 2
-                                              &to 0         &kp LGUI          &mt LC(LS(LALT)) SPC  &to 1
+                                              &to 0         &kp LGUI          &space  &to 1
         >;
         };
     };
