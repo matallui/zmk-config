@@ -64,9 +64,9 @@
 
         left_layer {
         bindings = <
-        &kp ESC         &kp AT      &kp POUND   &kp DLLR    &kp PRCNT           &kp CARET             &kp AMPS    &kp LT      &kp GT      &kp BSPC
-        &kp TAB         &kp EXCL    &kp PIPE    &kp APOS    &kp MINUS           &kp COLON             &kp LPAR    &kp RPAR    &kp SEMI    &kp RET
-        &mt TILDE GRAVE &kp QMARK 	&kp BSLH    &kp DQT     &kp UNDER           &kp LBKT              &kp LBRC    &kp RBRC    &kp RBKT    &to 2
+        &kp ESC         &kp AT    &kp POUND     &kp DLLR    &kp PRCNT           &kp CARET             &kp AMPS    &kp LT      &kp GT      &kp BSPC
+        &kp TAB         &kp DQT   &kp PIPE      &kp EXCL    &kp MINUS           &kp COLON             &kp LPAR    &kp RPAR    &kp SEMI    &kp RET
+        &mt TILDE GRAVE &kp APOS  &kp BSLH      &kp QMARK   &kp UNDER           &kp LBKT              &kp LBRC    &kp RBRC    &kp RBKT    &to 2
                                                 &to 0       &kp LGUI            &mt_spc_search LC(LS(LALT)) 0  &to 3
         >;
         };
