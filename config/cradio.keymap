@@ -37,7 +37,7 @@
         spc_search: spc_search {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp SPC>, <&kp LG(SPC)>;
+            bindings = <&kp SPC>, <&kp UNDER>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         mt_spc_search: mt_spc_search {
