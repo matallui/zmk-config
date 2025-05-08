@@ -10,11 +10,10 @@
 
 
 &mt {
-    flavor = "tap-preferred";
-    tapping-term-ms = <200>;
+    tapping-term-ms = <180>;
 };
 &lt {
-    tapping-term-ms = <200>;
+    tapping-term-ms = <180>;
 };
 / {
     behaviors {
@@ -37,17 +36,14 @@
             #binding-cells = <2>;
             bindings = <&kp>, <&dot_bang>;
         };
-        bspc_td_mt: bspc_ctrl_tap_dance_mod_tap {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&mt LCTRL BSPC>, <&kp BSPC>;
-        };
-        spc_td_mt: spc_shift_tap_dance_mod_tap {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&mt LSFT SPC>, <&kp SPC>;
+        thumb: thumb_mod {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <145>;
+            tapping-term-ms = <220>;
+            quick-tap-ms = <140>;
+            bindings = <&kp>, <&kp>;
         };
     };
 };
@@ -57,10 +53,10 @@
                 
         default_layer {
         bindings = <
-        &kp Q       &kp W       &kp E       &kp R       &kp T                   &kp Y           &kp U       &kp I         &kp O                &kp P
-        &kp A       &kp S       &kp D       &kp F       &kp G                   &kp H           &kp J       &kp K         &kp L                &kp APOS
-        &mt LGUI Z  &mt LALT X  &kp C       &kp V       &kp B                   &kp N           &kp M       &comma_under  &mt_dot_bang RALT 0  &mt RGUI SLASH
-                                            &lt 1 TAB   &bspc_td_mt             &spc_td_mt      &lt 2 ENTER 
+        &kp Q       &kp W       &kp E       &kp R       &kp T                   &kp Y            &kp U       &kp I         &kp O                &kp P
+        &kp A       &kp S       &kp D       &kp F       &kp G                   &kp H            &kp J       &kp K         &kp L                &kp APOS
+        &mt LGUI Z  &mt LALT X  &kp C       &kp V       &kp B                   &kp N            &kp M       &comma_under  &mt_dot_bang RALT 0  &mt RGUI SLASH
+                                            &lt 1 TAB   &thumb LCTRL BSPC       &thumb LSFT SPC  &lt 2 ENTER 
         >;
         };
 
