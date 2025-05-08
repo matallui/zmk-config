@@ -45,9 +45,9 @@
                 
         default_layer {
         bindings = <
-        &kp Q       &kp W       &kp E       &kp R       &kp T                   &kp Y           &kp U       &kp I         &kp O               &kp P
-        &kp A       &kp S       &kp D       &kp F       &kp G                   &kp H           &kp J       &kp K         &kp L               &kp APOS
-        &mt LGUI Z  &mt LALT X  &kp C       &kp V       &kp B                   &kp N           &kp M       &comma_under  &mt_dot_bang RALT 0 &mt RGUI SLASH
+        &kp Q       &kp W       &kp E       &kp R       &kp T                   &kp Y           &kp U       &kp I         &kp O                &kp P
+        &kp A       &kp S       &kp D       &kp F       &kp G                   &kp H           &kp J       &kp K         &kp L                &kp APOS
+        &mt LGUI Z  &mt LALT X  &kp C       &kp V       &kp B                   &kp N           &kp M       &comma_under  &mt_dot_bang RALT 0  &mt RGUI SLASH
                                             &lt 1 TAB   &mt LCTRL BSPC          &mt LSFT SPC    &lt 2 ENTER 
         >;
         };
@@ -63,9 +63,9 @@
         
         right_layer {
         bindings = <
-        &kp ESC   &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &none           &kp HOME         &kp PG_DN         &kp PG_UP    &kp END      &kp BSPC
-        &kp TAB   &kp C_PP    &kp C_PREV    &kp C_NEXT    &none           &kp LEFT         &kp DOWN          &kp UP       &kp RIGHT    &kp RET
-        &kp LGUI  &kp LALT    &kp C_BRI_DN  &kp C_BRI_UP  &none           &kp LC(LS(TAB))  &kp LG(LA(DOWN))  &LG(LA(UP))  &kp LC(TAB)  &none
+        &kp ESC   &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &none           &kp HOME         &kp PG_DN         &kp PG_UP      &kp END       &kp BSPC
+        &kp TAB   &kp C_PP    &kp C_PREV    &kp C_NEXT    &none           &kp LEFT         &kp DOWN          &kp UP         &kp RIGHT     &kp RET
+        &kp LGUI  &kp LALT    &kp C_BRI_DN  &kp C_BRI_UP  &none           &kp LC(LS(TAB))  &kp LG(LA(DOWN))  &kp LG(LA(UP))  &kp LC(TAB)  &none
                                             &trans        &trans          &trans           &trans
         >;
         };	
