@@ -10,43 +10,32 @@
 
 
 &mt {
-    tapping-term-ms = <185>;
+    tapping-term-ms = <200>;
 };
 &lt {
     flavor = "balanced";
-    require-prior-idle-ms = <110>;
+    require-prior-idle-ms = <150>;
     tapping-term-ms = <250>;
-    quick-tap-ms = <200>;
+    quick-tap-ms = <175>;
 };
 / {
     behaviors {
-        comma_under: comma_under {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp COMMA>, <&kp UNDER>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        dot_bang: dot_bang {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp DOT>, <&kp EXCL>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        mt_dot_bang: mt_dot_bang {
-            compatible = "zmk,behavior-hold-tap";
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            #binding-cells = <2>;
-            bindings = <&kp>, <&dot_bang>;
-        };
-        thumb: thumb_mod {
+        mt_qt: mt_quick_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
-            require-prior-idle-ms = <110>;
-            tapping-term-ms = <250>;
-            quick-tap-ms = <200>;
             bindings = <&kp>, <&kp>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <220>;
+            quick-tap-ms = <180>;
+        };
+        mt_hr: mt_homerow {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+            flavor = "balanced";
+            require-prior-idle-ms = <150>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <175>;
         };
     };
 };
@@ -56,28 +45,28 @@
                 
         default_layer {
         bindings = <
-        &kp Q       &kp W       &kp E       &kp R       &kp T                   &kp Y            &kp U       &kp I         &kp O                &kp P
-        &kp A       &kp S       &kp D       &kp F       &kp G                   &kp H            &kp J       &kp K         &kp L                &kp APOS
-        &mt LGUI Z  &mt LALT X  &kp C       &kp V       &kp B                   &kp N            &kp M       &comma_under  &mt_dot_bang RALT 0  &mt RGUI SLASH
-                                            &thumb LCTRL BSPC  &lt 1 TAB        &lt 2 SPC        &thumb LSFT ENTER   
+        &kp Q          &kp W          &kp E  &kp R          &kp T                   &kp Y      &kp U             &kp I      &kp O            &kp P
+        &kp A          &kp S          &kp D  &kp F          &kp G                   &kp H      &kp J             &kp K      &kp L            &kp SEMI
+        &mt_hr LGUI Z  &mt_hr LALT X  &kp C  &kp V          &kp B                   &kp N      &kp M             &kp COMMA  &mt_hr RALT DOT  &mt_hr RGUI SLASH
+                                             &mt LCTRL TAB  &lt 1 ENTER             &lt 2 SPC  &mt_qt LSFT BSPC
         >;
         };
 
         left_layer {
         bindings = <
-        &kp GRAVE    &kp AT       &kp POUND  &kp DLLR  &kp PRCNT           &kp CARET  &kp N7  &kp N8  &kp N9       &kp MINUS
-        &kp BSLH     &kp SEMI     &kp LPAR   &kp RPAR  &kp AMPS            &kp COLON  &kp N4  &kp N5  &kp N6       &kp PLUS
-        &mt LGUI LT  &mt LALT GT  &kp LBKT   &kp RBKT  &kp UNDER           &kp LBKT   &kp N1  &kp N2  &mt RALT N3  &mt RGUI EQUAL
-                                             &trans    &trans              &trans     &trans
+        &kp EXCL        &kp AT          &kp POUND  &kp DLLR  &kp PRCNT               &kp CARET  &kp N7  &kp N8  &kp N9          &kp MINUS
+        &kp GRAVE       &kp APOS        &kp LPAR   &kp RPAR  &kp BSLH                &kp STAR   &kp N4  &kp N5  &kp N6          &kp PLUS
+        &mt_hr LGUI LT  &mt_hr LALT GT  &kp LBKT   &kp RBKT  &kp AMPS                &kp N0     &kp N1  &kp N2  &mt_hr RALT N3  &mt_hr RGUI EQUAL
+                                                   &trans    &trans                  &kp SPC    &trans
         >;
         };
         
         right_layer {
         bindings = <
-        &kp ESC   &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &none           &kp HOME         &kp PG_DN         &kp PG_UP      &kp END       &kp BSPC
-        &kp TAB   &kp C_PP    &kp C_PREV    &kp C_NEXT    &none           &kp LEFT         &kp DOWN          &kp UP         &kp RIGHT     &kp RET
-        &kp LGUI  &kp LALT    &kp C_BRI_DN  &kp C_BRI_UP  &none           &kp LC(LS(TAB))  &kp LG(LA(DOWN))  &kp LG(LA(UP))  &kp LC(TAB)  &none
-                                            &trans        &trans          &trans           &trans
+        &kp ESC   &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &none                  &kp HOME         &kp PG_DN         &kp PG_UP       &kp END      &kp BSPC
+        &kp TAB   &kp C_PP    &kp C_PREV    &kp C_NEXT    &none                  &kp LEFT         &kp DOWN          &kp UP          &kp RIGHT    &kp RET
+        &kp LGUI  &kp LALT    &kp C_BRI_DN  &kp C_BRI_UP  &none                  &kp LC(LS(TAB))  &kp LG(LA(DOWN))  &kp LG(LA(UP))  &kp LC(TAB)  &kp EQUAL
+                                            &trans        &kp ENTER              &trans           &trans
         >;
         };	
     };
